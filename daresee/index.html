@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+	<meta name="theme-color" content="#99949E"/>
+	<meta name="msapplication-navbutton-color" content="#99949E"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#99949E"/>
+
+	<title>Laureline Jozic | DareSee</title>
+	<meta name="author" content="Internship Master Almighty"/>
+	<link rel="shortcut icon" type="image/jpg" href="https://lh3.googleusercontent.com/1m86CaDObhn_6IRLuI5MKcl_VGtlLRpes7t2wXBOGn06ByvPp2Sjzv-hjAZaAsghJHi6e8iiXgs6ZUTkTaDBUEcmxozHZL7z-TqoEqOqCImSoe69wzmULd23HutEqdvGhFGktKmz1g=w2400"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+
+	<style>
+		* {
+			outline: none;
+			outline-color: transparent;
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+			-webkit-touch-callout: none;
+			-webkit-user-drag: none;
+			user-drag: none;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			font-family: 'Roboto Condensed', sans-serif;
+			font-weight: 400;
+		}
+		*:not(input):not(select) {
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		html, body {
+			margin: 0; padding: 0;
+			width: 100%; height: auto;
+			overflow-y: auto;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+			scroll-behavior: smooth;
+			background-color: #f4f5f6;
+		}
+		html::-webkit-scrollbar, body::-webkit-scrollbar {
+			width: 0; height: 0;
+			display: none;
+		}
+		a {
+			text-decoration: none;
+			color: inherit;
+			transition: all .3s ease;
+		}
+		h1, h2 {
+			text-transform: uppercase;
+			font-family: 'Bebas Neue', regular;
+			font-size: 4em;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			margin: .25em 0;
+			color: black;
+		}
+		ul {
+			list-style: circle;
+			padding-left: 2em;
+		}
+		.bold {
+			font-weight: 700;
+		}
+		.thin {
+			font-weight: 100;
+		}
+		#header {
+			background-color: #2E3CA8; color: white;
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+		}
+		#logo {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: .75em 1em;
+		}
+		#logo #avatar {
+			width: 3em; height: 3em;
+			border-radius: 50%;
+			overflow: hidden;
+			position: relative;
+		}
+		#logo #avatar img {
+			width: auto; height: auto; max-height: 100%;
+			min-width: 100%; min-height: 100%;
+			position: absolute;
+			top: 50%; left: 50%; bottom: auto; right: auto;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+		}
+		#logo #avatar #linkedin {
+			opacity: 0;
+			position: absolute;
+			width: 100%; height: 100%;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background-color: rgba(0,0,0,.5); 
+			color: white;
+			z-index: 2;
+			text-align: center;
+			line-height: 3em;
+			transition: all .3s ease;
+		}
+		#logo #avatar:hover #linkedin {
+			opacity: 1;
+		}
+		#logo span {
+			padding: 0 .75em;
+		}
+		.section {
+			width: 100%; height: 33em;
+			padding-top: 5em;
+			display: flex;
+			align-items: center;
+			justify-content: end;
+			flex-direction: column;
+			background-color: #2f3da8;
+		}
+		.head_text {
+			padding: 0 1em; color: white;
+			font-size: 2.5em;
+			font-weight: 700;
+			text-align: center;
+		}
+		#dare {
+			color: white;
+			margin-top: 4em; padding: 1em 4em;
+			font-size: 1em; font-weight: 700;
+			text-transform: uppercase;
+			background-color: #e8442e;
+			border: none;
+			cursor: pointer;
+			box-shadow: -9px 5px 0px 1px #fecb2f;
+			transition: all .3s ease;
+		}
+		#dare:hover, .little:hover {
+			background-color: black;
+		}
+		.title {
+			width: 100%;
+			margin: 1em 0; padding: 1.5em;
+			text-align: center;
+			color: #655F6B;
+		}
+		.row {
+			width: 100%;
+			padding: .125em 0em;
+		}
+		.row .column {
+			width: 50%;
+			display: inline-block;
+			vertical-align: top;
+			padding: 2em;
+		}
+		.presentation {
+			padding: 0em 7em;
+			text-align: center;
+			color: #444444;
+			line-height: 1.5em;
+			border-radius: .5em;
+			font-size: 120%;
+		}
+		.skills-list {
+			height: 100%;
+			width: 100%;
+			display: block;
+			overflow: hidden;
+			margin-top: 3em;
+			margin-bottom: 3em;
+		}
+		.skill {
+			width: 31%;	height: auto;
+			min-height: 15em;
+			margin: 0 1%;
+			display: block;
+			float: left;
+			overflow: hidden;
+			margin-bottom: 1em;
+			background-color: white;
+			box-shadow: -5px 5px 5px rgb(0 0 0 / 10%);
+			padding: 0 .5em;
+			text-align: center; justify-content: center;
+		}
+		.skill .fas {
+			font-size: 1.5em;
+			padding-top: 1em;
+			transition: all .3s ease;
+		}
+		.skill:hover .fas {
+			color: #e8442e;
+		}
+		.hover-a {
+			transition: all 2s ease;
+		}
+		.skill:hover .hover-a {
+			color: #e8442e !important;
+		}
+		.little {
+			color: white;
+			margin-bottom: 1em; padding: 1em 3em;
+			font-size: .5em; font-weight: 700;
+			text-transform: uppercase;
+			background-color: #e8442e;
+			border: none;
+			cursor: pointer;
+			box-shadow: -9px 5px 0px 1px #fecb2f;
+			transition: all .3s ease;
+		}
+		#columns {
+			padding: 1em 5em;
+		}
+		.job {
+			padding: 1em 3em .5em;
+		}
+		.job_flex {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		.job .job_icon {
+			font-size: 175%;
+			width: 1.5em;
+			display: inline-block;
+		}
+		.job_content {
+			display: inline-block;
+			padding-left: 1em;
+			width: calc(100% - (1.75em * 1.5));
+		}
+		.CV {
+			padding: 0 2em;
+		}
+		.achievements {
+			font-weight: 100;
+			font-size: 100%;
+			padding: .4em 0em;
+		}
+		.job_halfwidth {
+			width: 50%;
+			display: inline-block;
+		}
+		.colored_icons {
+			color: #e8442e;
+			font-size: 150%;
+			transition: all .3s ease !important;
+		}
+		.colored_icons:hover a {
+			color: #2f3da8;
+		}
+		#footer {
+			padding: 1em;
+			font-size: 100%; line-height: 1.25em;
+			text-align: center;
+			color: white; background-color: #2f3da8;
+			position: fixed;
+			bottom: 0; left: 0; right: 0; top: auto;
+		}
+		#footer span {
+			padding: 0 .5em;
+			display: inline-block;
+		}
+		.section img {
+			transform: translate(20px, -25px);
+		}
+		#goal {
+			margin-bottom: 6em;
+		}
+		.images {
+			width: auto; max-height: 20em;
+			cursor: pointer;
+			transition: all .3s ease;
+		}
+		.images:hover {
+			opacity: .75;
+			cursor: pointer;
+		}
+		#want {
+			text-align: center;
+			padding: 0;
+			vertical-align: middle;
+		}
+		.person {
+			display: block;
+			width: 100%;
+		}
+		.overlay {
+			position: relative;
+			width: fit-content;
+			height: auto;
+			margin: 0 auto;
+		}
+		.overlay-pic {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			opacity: 0;
+			transition: .5s ease;
+			border: 10px solid #e8442e;
+			box-sizing: border-box;
+			background-color: #f4f5f6;
+		}
+		.overlay:hover .overlay-pic {
+			opacity: 0.7;
+		}
+		.text {
+			position: absolute; width: 100%;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+		@media screen and (max-width: 720px){
+			.container {
+				font-size: 3.25vw;
+			}
+			.presentation {
+				padding: 0 3em;
+			}
+			#header {
+				flex-direction: column;
+			}
+			#header > div {
+				width: 100%;
+			}
+			.row .column {
+				width: 100%;
+				padding: 0;
+			}
+			.job {
+				padding: 1em 2.5em .5em;
+			}
+			.head_text {
+				font-size: 2em;
+			}
+			.section img {
+				width: 80%;
+			}
+			.skill {
+				width: 100%;
+				float: none;
+				margin-top: 1em;
+				min-height: 12em;
+			}
+		}
+		@media screen and (max-width: 450px){
+			.container {
+				font-size: 4vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Header -->
+	<div id="header">
+		<div id="logo">
+			<div id="avatar">
+				<img src="https://lh3.googleusercontent.com/1m86CaDObhn_6IRLuI5MKcl_VGtlLRpes7t2wXBOGn06ByvPp2Sjzv-hjAZaAsghJHi6e8iiXgs6ZUTkTaDBUEcmxozHZL7z-TqoEqOqCImSoe69wzmULd23HutEqdvGhFGktKmz1g=w2400" title="" alt="LJ"/>
+				<a href="https://www.linkedin.com/in/laurelinejozic/" target="_blank"><div id="linkedin"><i class="fab fa-linkedin fa-fw"></i></div></a>
+			</div>
+			<span>Laureline&nbsp;Jozic&nbsp;|&nbsp;Job&nbsp;seeker</span>
+		</div>
+	</div>
+	<div class="section">
+		<img src="https://i.ibb.co/Cv9prZD/dare-see-laureline.png" title="" alt="Jozic">
+		<span class="head_text">Make your team even more B.A.M.</span>
+		<span class="head_text">Beamish. Adventurous. Metagrabolised.</span>
+		<span style="color:white;padding-top:.25em;">...I mean, motivated. Motivated sounds better.</span>
+		<a href="#about" id="dare">Dare to see more</a>
+	</div>
+	<!-- Présentation -->
+	<div id="about" class="row">
+		<div class="title"><h2>Who I <span style="color: #e8442e;font-family:inherit;">am</span></h2></div>
+		<div class="presentation">
+			<p>As a future <span class="bold">digital marketing</span> specialist, I am looking for a first job in a company with an amazing team & spirit (and team spirit) to put my <span class="bold">copywriting and storytelling skills</span> –specifically– to the test.</p>
+			<div class="skills-list">
+				<div class="skill">
+					<i class="fas fa-pen-fancy"></i>
+					<p class="bold">Copywriting & Storytelling</p>
+					<p>Principalement en français grâce à mon expérience de correctrice chez <a href="https://editionsjourdan.com/" target="_blank" style="color:black;" class="hover-a">Jourdan</a>, but I can blabber in English, y en español también.</p>
+				</div>
+				<div class="skill">
+					<i class="fas fa-poll"></i>
+					<p class="bold">Digital marketing</p>
+					<p>An intensive training course at <a href="https://skillsfactory.org/" target="_blank" style="color:black;" class="hover-a">Skillsfactory</a> allowed me to grasp the magic of SEO, SEA, data analytics, content & video marketing, and more.</p>
+				</div>
+				<div class="skill">
+					<i class="fas fa-palette"></i>
+					<p class="bold">Web design</p>
+					<p>Whether front-end by improving UX/UI or back-end by playing with CSS and HTML, as I learned during my last internship at <a href="https://wp.luckycycle.com/" target="_blank" style="color:black;" class="hover-a">LuckyCycle</a>.</p>
+				</div>
+			</div>
+			<a href="#certifications"><button class="little">See a little more</button></a>
+		</div>
+	</div>
+	<!-- Certifications -->
+	<div id="certifications" class="row">
+		<div class="title"><h2>What I've <span style="color: #e8442e;font-family:inherit;">learned</span></h2></div>
+		<div class="presentation">
+			<p>Meaning, as far as significant professional skills are concerned. I can also make incredibly silly faces and recite Russian poetry, but it might not be the most relevant time and place to mention it. Or is it?</p></div>
+			<div id="columns">
+				<div class="column">
+					<div class="job job_flex">
+						<span class="job_icon colored_icons"><a href="https://certificates.cxl.com/85d3f5a4-672e-4844-b1c5-2c0da78f680d" target="_blank"><i class="fas fa-certificate fa-fw"></i></a></span>
+						<div class="job_content">
+							<h3 class="job_title">LinkedIn Advertising</h3>
+							<h4 class="job_where">CXL Institute | novembre 2020</h4>
+						</div>
+					</div>
+					<div class="job job_flex">
+						<span class="job_icon colored_icons"><a href="https://certificates.cxl.com/4e453843-c4a2-4eee-9814-8dbbf16b31f5#gs.rr3zsf" target="_blank"><i class="fas fa-certificate fa-fw"></i></a></span>
+						<div class="job_content">
+							<h3 class="job_title">Facebook Ads</h3>
+							<h4 class="job_where">CXL Institute | novembre 2020</h4>
+						</div>
+					</div>
+					<div class="job job_flex">
+						<span class="job_icon colored_icons"><a href="https://certificates.cxl.com/0b1fb6b5-dfaa-4d34-ad33-1ec4d1c4d520#gs.rr42rb" target="_blank"><i class="fas fa-certificate fa-fw"></i></a></span>
+						<div class="job_content">
+							<h3 class="job_title">Landing Page Optimization</h3>
+							<h4 class="job_where">CXL Institute | novembre 2020</h4>
+						</div>
+					</div>
+					<div class="job job_flex">
+						<span class="job_icon colored_icons"><a href="https://skillshop.exceedlms.com/student/award/62868097" target="_blank"><i class="fab fa-google fa-fw"></i></a></span>
+						<div class="job_content">
+							<h3 class="job_title">Certification Google Analytics</h3>
+							<h4 class="job_where">Google Digital Academy | novembre 2020</h4>
+						</div>
+					</div>
+					</div
+					><div class="column">
+						<div class="job job_flex">
+							<span class="job_icon colored_icons"><a href="https://certificates.cxl.com/e15c2305-a8c8-4840-9494-6ac8ea1b8abe" target="_blank"><i class="fas fa-certificate fa-fw"></i></a></span>
+							<div class="job_content">
+								<h3 class="job_title">User-Centric Marketing</h3>
+								<h4 class="job_where">CXL Institute | septembre 2020</h4>
+							</div>
+						</div>
+
+						<div class="job job_flex">
+							<span class="job_icon colored_icons"><a href="https://certificates.cxl.com/eef3604e-020a-4835-9252-61f6348af4a8" target="_blank"><i class="fas fa-certificate fa-fw"></i></a></span>
+							<div class="job_content">
+								<h3 class="job_title">Content Strategy and SEO for Lead Generation</h3>
+								<h4 class="job_where">CXL Institute | novembre 2020</h4>
+							</div>
+						</div>
+						<div class="job job_flex">
+							<span class="job_icon colored_icons"><a href="https://certificates.cxl.com/c7152259-38e2-4f92-83e6-fc0bb14e5caf" target="_blank"><i class="fas fa-certificate fa-fw"></i></a></span>
+							<div class="job_content">
+								<h3 class="job_title">Marketing Strategy</h3>
+								<h4 class="job_where">CXL Institute | novembre 2020</h4>
+							</div>
+						</div>
+						<div class="job job_flex">
+							<span class="job_icon colored_icons"><i class="fab fa-google fa-fw"></i></span>
+							<div class="job_content">
+								<h3 class="job_title">Google Ads Search Certification</h3>
+								<h4 class="job_where">Google Digital Academy | octobre 2020</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="presentation">
+					<a href="#goal"><button class="little">Alright, last one</button></a>
+				</div>
+			</div>
+			<!-- What I want -->
+			<div id="goal" class="row">
+				<div class="title"><h2>What I <span style="color: #e8442e;font-family:inherit;">want</span>*</h2></div>
+				<div class="presentation">
+					<p><span style="font-size:1.25em; font-family: inherit;">*</span>Would like. But then, I couldn't spam your mind with the song <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><span class="thin" style="font-style: italic;">You're the one that I want, you're the one that I want, ooh ooh ooh...</span></a>, and that would've been too bad. Because, if it wasn't obvious enough, I'd really like to work with you.</p></div>
+					<!-- My sincerest apologies for Rick. He doesn't always know what he's doing. -->
+					<div id="columns">
+						<div class="column" id="want">
+							<div class="job job_flex">
+
+								<div class="CV">
+									<p style="padding: .5em">So, I'd love it if you could have a look at this CV I made just for you.</p>
+									<a href="./assets/CV-DareSee.jpg" target ="_blank"><img src="./assets/CV-DareSee.jpg" alt="CVDare-See" class="images"></a>
+
+								</div>
+							</div>
+							</div
+							><div class="column" id="want">
+								<div class="job job_flex">
+									<div class="CV">
+										<p>And, maybe, allow me to demonstrate how motivated I am with an interview!</p>
+										<p style="font-weight:300">(If my face scares you, I am also available for an audio-only Zoom or Teams, or an old-fashioned phone call.)</p>
+										<div class="person">
+											<div class="overlay">
+												<picture>
+													<img src="./assets/dareseepic.jpg" alt="dareseepic" style="max-height: 16em;">
+												</picture>
+												<div class="overlay-pic"> 
+													<div class="text">
+														Hi Dare!
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				<!-- Footer -->
+				<div id="footer">
+					<span><i class="fas fa-phone-alt fa-fw"></i>&nbsp;<a href="tel:+32472121321" target="_self">+32&nbsp;472&nbsp;12&nbsp;13&nbsp;21</a></span>
+					<span><i class="fas fa-map-marker-alt fa-fw"></i>&nbsp;<a href="https://www.google.com/maps/place/Rue+des+Chevaliers/@50.8362394,4.3574566,17z/" target="_blank">6&nbsp;rue&nbsp;des&nbsp;Chevaliers, 1050&nbsp;Ixelles</a></span>
+					<span><i class="fas fa-envelope fa-fw"></i>&nbsp;<a href="mailto:laureline.jozic@gmail.com" target="_self">laureline.jozic@gmail.com</a></span>
+				</div>
+			</body>
+			</html>
